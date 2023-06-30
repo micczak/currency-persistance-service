@@ -1,12 +1,11 @@
 package com.example.currencypersistanceservice.client;
 
-import com.example.currencypersistanceservice.model.Currencies;
 import com.example.currencypersistanceservice.model.ExchangeResult;
 import feign.Headers;
 import feign.Param;
 import feign.RequestLine;
 
-public interface NbpClient {
+public interface  NbpClient {
 
         @RequestLine("GET /symbols")
         @Headers("apikey: {apiKey}")

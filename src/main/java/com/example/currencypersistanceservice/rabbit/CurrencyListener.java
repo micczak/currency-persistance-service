@@ -1,7 +1,7 @@
 package com.example.currencypersistanceservice.rabbit;
 
 import com.example.currencypersistanceservice.model.CurrencyInfoDto;
-import com.example.currencypersistanceservice.service.CurrencyService;
+import com.example.currencypersistanceservice.service.impl.CurrencyServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -12,11 +12,11 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class CurrencyListener {
 
-    private final CurrencyService currencyService;
+    private final CurrencyServiceImpl currencyServiceImpl;
 
     @RabbitListener(queues = "test_queue")
     public void receiveMessage(CurrencyInfoDto currencyInfoDto) {
         log.info("Received: " + currencyInfoDto);
-        currencyService.save(currencyInfoDto);
+        currencyServiceImpl.save(currencyInfoDto);
     }
 }

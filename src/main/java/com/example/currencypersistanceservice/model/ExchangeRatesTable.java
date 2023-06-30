@@ -6,6 +6,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.Currency;
 
 @Data
 public class ExchangeRatesTable {
@@ -22,6 +23,6 @@ public class ExchangeRatesTable {
     private LocalDate effectiveDate;
 
     @Valid
-    private Currencies currencies;
+    private CurrencyInfo currencies;
 }
 

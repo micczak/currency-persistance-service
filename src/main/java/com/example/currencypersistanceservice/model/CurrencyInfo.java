@@ -3,7 +3,6 @@ package com.example.currencypersistanceservice.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
-import lombok.Getter;
 
 import java.math.BigDecimal;
 
