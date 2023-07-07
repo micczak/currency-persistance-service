@@ -14,9 +14,9 @@ public class CurrencyListener {
 
     private final CurrencyServiceImpl currencyServiceImpl;
 
-    @RabbitListener(queues = "test_queue")
+    @RabbitListener(queues = "newCurrencies")
     public void receiveMessage(CurrencyInfoDto currencyInfoDto) {
         log.info("Received: " + currencyInfoDto);
-        currencyServiceImpl.save(currencyInfoDto);
+//        currencyServiceImpl.save(currencyInfoDto);
     }
 }
