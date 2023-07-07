@@ -14,5 +14,5 @@ public class CurrencyInfoDto {
     private String code;
     private BigDecimal bid;
     private BigDecimal ask;
-
+    // TODO: 07.07.2023  dodać baze danych, zrobić zxapisywanie, zobaczyć czy stare dane są nadpisywane przez nowe
 }
