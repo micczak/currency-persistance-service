@@ -5,6 +5,7 @@ import com.example.currencypersistanceservice.service.CurrencyService;
 import com.example.currencypersistanceservice.service.impl.CurrencyServiceImpl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.xml.bind.v2.TODO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
@@ -24,6 +25,7 @@ public class CurrencyListener {
     public void receiveMessage(byte[] payload) {
       try {
           CurrencyInfoDto currencyInfoDto = objectMapper.readValue(payload, CurrencyInfoDto.class);
+          // TODO: 11.07.2023  spróbować bez objectmappera
           log.info("Received: " + currencyInfoDto);
           currencyService.save(currencyInfoDto);
       } catch (IOException e){

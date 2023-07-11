@@ -18,13 +18,9 @@ public class CurrencyServiceImpl implements CurrencyService {
     private final CurrencyRepository currencyRepository;
 
     @Override
-    public List<CurrencyEntity> loadCurrencies(){
-        return currencyRepository.findAll();
-    }
-    @Override
     public void save(CurrencyInfoDto currencyInfoDto) {
         Optional<CurrencyEntity> existingCurrency = currencyRepository.findByCode(currencyInfoDto.getCode());
-
+        // TODO: 11.07.2023 wykorzystać metody z Optionala ifPresent.orElse
         if (existingCurrency.isPresent()) {
             CurrencyEntity currencyToUpdate = existingCurrency.get();
             currencyToUpdate.setBid(currencyInfoDto.getBid());
@@ -40,5 +36,8 @@ public class CurrencyServiceImpl implements CurrencyService {
 
             currencyRepository.save(currency);
         }
+
     }
+// TODO: 11.07.2023 metoda update i save rozdzielić :D
+    // TODO: 11.07.2023 TESTY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }

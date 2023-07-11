@@ -7,7 +7,5 @@ import java.util.List;
 
 public interface CurrencyService {
 
-    List<CurrencyEntity> loadCurrencies();
-
     void save(CurrencyInfoDto currencyInfoDto);
 }
