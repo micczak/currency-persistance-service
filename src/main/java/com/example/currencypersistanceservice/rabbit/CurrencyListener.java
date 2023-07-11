@@ -19,7 +19,6 @@ import java.io.IOException;
 public class CurrencyListener {
 
     private final CurrencyService currencyService;
-
     private final ObjectMapper objectMapper;
     @RabbitListener(queues = "newCurrencies")
     public void receiveMessage(byte[] payload) {
