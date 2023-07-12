@@ -1,10 +1,10 @@
-package com.example.currencypersistanceservice;
+package com.example.currencypersistanceservice.service.impl;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CurrencyPersistanceServiceApplicationTests {
+class ExchangeApiApplicationTests {
 
 	@Test
 	void contextLoads() {
